@@ -8,4 +8,11 @@ export namespace Actions {
         type:string,
         payload: T
     }
+
+    export interface Get {
+        type: typeof WORD_REQUEST,
+        payload?: string | null
+    }
+
+    export const get = (query: string | null | undefined): Get => ({type: WORD_REQUEST , payload: query})
 }

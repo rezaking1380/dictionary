@@ -3,28 +3,35 @@ import { Actions } from "../moduls/Action.model";
 import initState  from "../moduls/model";
 
 export const initState: initState = {
-    Word : {},
-    Loading : true,
+    Word : [],
+    Status : 'idel',
     Error : ''
 }
 
-const Reducer = (state = initState, action : Actions.Action<any> ) => {
+const Reducer = (state = initState, action: any ) => {
     switch (action.type) {
         case Actions.WORD_REQUEST:
-            state.Loading = true
-            break;
+            return {
+                ...state,
+                Word: [],
+                Status: 'loading',
+                Error: ''
+            }
         case Actions.WORD_SUCCESS:
-            state.Word = action.payload
-            state.Loading = false
-            break;
+            return {
+                ...state,
+                Word: action.payload,
+                Status: 'success'
+            }
         case Actions.WORD_FAIL:
-            state.Error = action.payload
-            state.Loading = true
-            break;    
+            return {
+                ...state,
+                Error: action.payload,
+                Status : 'fail'
+            }    
     
         default:
-            state
-            break;
+            return state
     }
 }
 

@@ -14,7 +14,7 @@ export function* Get (action : Actions.Action<string>) {
     try {
         const word : word = yield call(getWord, get)
         yield put({type: WORD_SUCCESS,payload: word})
-    } catch (error) {
-        yield put({type: WORD_FAIL,payload: error})
+    } catch (error:any) {
+        yield put({type: WORD_FAIL,payload: error.message})
     }
 }

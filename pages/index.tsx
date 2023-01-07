@@ -1,12 +1,25 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import WordService from "../Service/Word";
+import axios from "axios";
+import { useState } from "react";
+import SearchBox from "../components/SearchBox";
+import mainImg from "../public/img/main-1.jpg";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  // const dispatch = useDispatch()
+  // const get = new WordService(axios)
+  // const [word, setword] = useState('');
+  // const change = (e:any) => setword(e.target.value)
+
   return (
     <>
       <Head>
@@ -16,9 +29,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Link href={'/word'}>
-        </Link>
+        <div className="h-[95vh]">
+          <SearchBox />
+        </div>
       </main>
     </>
-  )
+  );
 }
