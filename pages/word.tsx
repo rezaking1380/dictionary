@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Example from "../components/Example";
 import Loading from "../components/Loading";
 import PartOfSpeech from "../components/PartOfSpeech";
-import initState from "../moduls/model";
+import initState, { meanings, word } from "../moduls/model";
 import { FcSpeaker } from "react-icons/fc";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -13,13 +13,15 @@ function Word() {
   const status = useSelector((state: initState) => state.Status);
   const [word, setWord] = useState(details[0]);
   if (details.length == 0) <Loading />;
+  if (word == undefined) <Loading />
   const handelAudio = (e: any) => {
     e.preventDefault();
-    const audio = new Audio(word?.phonetics[0].audio);
+    const phonetics = word?.phonetics[0]
+    const audio = new Audio(phonetics.audio);
     audio.play();
   };
   let examples: string[] = [];
-  let partOfSpeech: never[] = [];
+  let partOfSpeech:meanings[] = [];
   let allExample: any = [];
   details.forEach((item) => {
     item.meanings?.forEach(

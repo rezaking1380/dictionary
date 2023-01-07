@@ -17,9 +17,9 @@ export default function PartOfSpeech(meanings: any) {
       </div>
       <div className="divide-y py-3">
         {meaning.definitions.map((item, index) => (
-          <div key={index} className='py-2'>
+          <div key={index} className="py-2">
             <div className="text-lg font-semibold text-gray-800">
-              <span className="mr-2">{index+1}.</span>
+              <span className="mr-2">{index + 1}.</span>
               {item.definition}
             </div>
             <div className="pl-3">

@@ -8,13 +8,13 @@ export default interface initState {
 export interface word {
     word?: string,
     phonetic?: string ,
-    phonetics?: phonetics[],
+    phonetics: phonetics[],
     meanings?: meanings[],
 }
 
 export interface phonetics {
     text?:string,
-    audio?:string
+    audio:string
 }
 
 export interface meanings {
@@ -25,7 +25,7 @@ export interface meanings {
 }
 
 export interface definitions {
-    definition: definition,
+    definition: string,
     synonyms: string[],
     antonyms:string[]
 }
