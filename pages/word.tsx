@@ -45,7 +45,6 @@ function Word() {
   useEffect(() => {
     setWord(details[0]);
   }, [details]);
-  // console.log(examples)
   return (
     <div>
       <div className="mt-5">
