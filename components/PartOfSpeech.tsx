@@ -12,21 +12,15 @@ export default function PartOfSpeech(meanings: any) {
     <div className="border-2 mt-6 p-5 rounded-lg border-l-8 border-[#50C9E7]">
       <div>
         <div className="text-2xl font-semibold border-b-2 pb-3">
-          {status === 'success' ? meaning.partOfSpeech : <Skeleton height={30} width={100} />}
+          {meaning.partOfSpeech}
         </div>
-        <div>{}</div>
-        <div>{}</div>
       </div>
       <div className="divide-y py-3">
         {meaning.definitions.map((item, index) => (
           <div key={index} className="py-2">
             <div className="text-lg font-semibold text-gray-800 flex">
               <span className="mr-2">{index + 1}.</span>
-              {status === 'success' ? item.definition : 
-              <div className="w-11/12">
-                <Skeleton height={30} />
-                <Skeleton height={30} width={300} />
-              </div>  }
+              {item.definition}
             </div>
             <div className="pl-3">
               <SynonymsOrAntonyms syORan={item.synonyms} name={"synonyms"} />

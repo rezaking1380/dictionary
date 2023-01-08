@@ -15,11 +15,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  // const dispatch = useDispatch()
-  // const get = new WordService(axios)
-  // const [word, setword] = useState('');
-  // const change = (e:any) => setword(e.target.value)
-
   return (
     <>
       <Head>

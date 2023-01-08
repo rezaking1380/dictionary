@@ -28,11 +28,6 @@ export default function SearchBox() {
       className={` flex flex-col max-w-screen-md mx-auto justify-center sm:min-w-[600px]`}
       id="searchbox"
     >
-      {/* <div className="flex justify-center items-center flex-col mb-8">
-        <img src='/assets/img/Eng (2).png' className="mb-4 md:mb-8 w-[90px] md:w-[200px]"/>
-        <h1 className="font-bold text-3xl md:text-5xl">English Dictionary</h1>
-      </div> */}
-      
       <div
         className="relative flex items-center p-0 transition-all duration-300 border-[0.35rem]
     border-[#E76F51] ring-4 ring-[#6248B1]/10 rounded-3xl mx-3  shadow-none"
