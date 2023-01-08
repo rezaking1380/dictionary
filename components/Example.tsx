@@ -22,7 +22,7 @@ export default function Example({ examples }: any) {
               key={index}
               className="flex text-gray-600 font-medium text-lg mb-3"
             >
-              {Examples.length !== 0 ? (
+              {example !== undefined ? (
                 <>
                   <span className="mr-2">{index + 1}.</span>
                   <li>{example !== undefined && example}</li>

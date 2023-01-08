@@ -14,10 +14,15 @@ function Word() {
   const [word, setWord] = useState(details[0]);
   if (details.length == 0) <Loading />;
   if (word == undefined) <Loading />
+    let wordAudio: string | undefined
+    let wordPhonetic
+    word?.phonetics.forEach((item) => {
+      wordPhonetic = item.text;
+      wordAudio = item.audio
+    })
   const handelAudio = (e: any) => {
     e.preventDefault();
-    const phonetics = word?.phonetics[0]
-    const audio = new Audio(phonetics.audio);
+    const audio = new Audio(wordAudio);
     audio.play();
   };
   let examples: string[] = [];
@@ -33,7 +38,7 @@ function Word() {
   useEffect(() => {
     setWord(details[0]);
   }, [details]);
-
+  console.log(wordAudio)
   return (
     <div className="max-w-screen-lg mx-auto mt-6 flex flex-wrap items-start sm:flex-nowrap">
       <div className="sm:w-8/12 w-full mx-3">
@@ -54,7 +59,7 @@ function Word() {
             </div>
             <span className="font-semibold text-xl">
               {status === "success" ? (
-                word?.phonetic
+                wordPhonetic
               ) : (
                 <Skeleton width={100} height={30} />
               )}
