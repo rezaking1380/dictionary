@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import initState from "../moduls/model";
 
 export default function Example({ examples }: any) {
-  const Examples: string[] = examples.filter((item: any) => item !== undefined);
+  const Examples: string[] = examples?.filter((item: any) => item !== undefined);
   const status = useSelector((state: initState) => state.Status);
   const [count, setcount] = useState(5);
   const handelClick = (e: any) => {
@@ -17,7 +17,7 @@ export default function Example({ examples }: any) {
     <div className="border-2 border-l-8 mx-3 p-5 rounded-lg border-[#264653]">
       <ul>
         {status === "success" ? (
-          Examples.slice(0, count).map((example, index) => (
+          Examples?.slice(0, count).map((example, index) => (
             <div
               key={index}
               className="flex text-gray-600 font-medium text-lg mb-3"

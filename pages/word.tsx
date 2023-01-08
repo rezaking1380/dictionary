@@ -29,16 +29,23 @@ function Word() {
   let examples: string[] = [];
   let partOfSpeech:meanings[] = [];
   let allExample: any = [];
+  let a
   details.forEach((item) => {
     item.meanings?.forEach(
-      (i) => (allExample = i.definitions.concat(i.definitions))
+      
+      (i) => {
+        a = i.definitions.concat(i.definitions)
+        allExample = a.map((e) => e.definition)
+
+      }
     );
     item.meanings?.forEach((i) => partOfSpeech.push(i));
   });
-  examples = allExample.map((item: any) => item.example);
+        examples = allExample.concat(allExample)
   useEffect(() => {
     setWord(details[0]);
   }, [details]);
+  // console.log(examples)
   return (
     <div>
       <div className="mt-5">
