@@ -7,6 +7,7 @@ import initState, { meanings } from "../moduls/model";
 import { FcSpeaker } from "react-icons/fc";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import SearchBox from "../components/SearchBox";
 
 function Word() {
   const details = useSelector((state: initState) => state.Word);
@@ -39,7 +40,11 @@ function Word() {
     setWord(details[0]);
   }, [details]);
   return (
-    <div className="max-w-screen-lg mx-auto mt-6 flex flex-wrap items-start sm:flex-nowrap">
+    <div>
+      <div className="mt-5">
+       <SearchBox /> 
+      </div>
+      <div className="max-w-screen-lg mx-auto mt-6 flex flex-wrap items-start sm:flex-nowrap">
       <div className="sm:w-8/12 w-full mx-3">
         <div className="border-[#E76F51] border-l-8 flex items-center rounded-md justify-between ring-2 ring-[#E76F51]">
           <div className="my-4 mx-5 flex flex-col">
@@ -77,6 +82,7 @@ function Word() {
       <div className="sm:w-4/12 w-full mt-5 sm:m-0">
         <Example examples={examples} />
       </div>
+    </div>
     </div>
   );
 }

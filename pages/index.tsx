@@ -29,7 +29,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className="h-[95vh]">
+        <div className="h-[95vh] flex flex-col justify-center">
+        <div className="flex justify-center items-center flex-col mb-8">
+        <img src='/assets/img/Eng (2).png' className="mb-4 md:mb-8 w-[90px] md:w-[200px]"/>
+        <h1 className="font-bold text-3xl md:text-5xl">English Dictionary</h1>
+      </div>
           <SearchBox />
         </div>
       </main>
