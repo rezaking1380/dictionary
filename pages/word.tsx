@@ -38,7 +38,6 @@ function Word() {
   useEffect(() => {
     setWord(details[0]);
   }, [details]);
-  console.log(wordAudio)
   return (
     <div className="max-w-screen-lg mx-auto mt-6 flex flex-wrap items-start sm:flex-nowrap">
       <div className="sm:w-8/12 w-full mx-3">
