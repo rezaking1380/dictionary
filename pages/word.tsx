@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Example from "../components/Example";
 import Loading from "../components/Loading";
 import PartOfSpeech from "../components/PartOfSpeech";
-import initState, { meanings, word } from "../moduls/model";
+import initState, { meanings } from "../moduls/model";
 import { FcSpeaker } from "react-icons/fc";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -65,8 +65,7 @@ function Word() {
           </div>
         </div>
         <div>
-          {status === "success" &&
-            partOfSpeech.map((item, index) => (
+          {partOfSpeech.map((item, index) => (
               <PartOfSpeech key={index} meanings={item} />
             ))}
         </div>
