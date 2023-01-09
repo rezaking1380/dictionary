@@ -1,18 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import { Provider, useDispatch, useSelector } from "react-redux";
-import WordService from "../Service/Word";
-import axios from "axios";
-import { useState } from "react";
 import SearchBox from "../components/SearchBox";
-import mainImg from "../public/img/main-1.jpg";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -25,10 +14,15 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className="h-[95vh] flex flex-col justify-center">
-        <div className="flex justify-center items-center flex-col mb-8">
-        <img src='/assets/img/Eng (2).png' className="mb-4 md:mb-8 w-[90px] md:w-[200px]"/>
-        <h1 className="font-bold text-3xl md:text-5xl">English Dictionary</h1>
-      </div>
+          <div className="flex justify-center items-center flex-col mb-8">
+            <img
+              src="/assets/img/Eng (2).png"
+              className="mb-4 md:mb-8 w-[90px] md:w-[200px]"
+            />
+            <h1 className="font-[Quicksand bold] font-bold text-3xl md:text-5xl">
+              English Dictionary
+            </h1>
+          </div>
           <SearchBox />
         </div>
       </main>

@@ -3,9 +3,7 @@
   margin: 0;
   padding: 0;
 }
-.body {
-  font-family: 'Quicksand';
-}
+
 @font-face {
   font-family: 'Quicksand bold';
   src: local('Quicksand'), url(/assets/fonts/quicksand-v24-latin-ext-700.woff) format('woff');

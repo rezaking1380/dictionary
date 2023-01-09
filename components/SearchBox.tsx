@@ -37,7 +37,7 @@ export default function SearchBox() {
           type="text"
           placeholder="Enter Word"
           className="flex overflow-hidden focus:outline-none placeholder:text-gray-200 placeholder:uppercase py-4 md:py-7 w-[90%]
-            rounded-3xl pl-3 md:pl-4 font-quicksand-bold text-lg md:text-2xl"
+            rounded-3xl pl-3 md:pl-4 font-quicksand-bold text-lg md:text-2xl font-semibold"
           onChange={suggestions}
           value={value}
         />

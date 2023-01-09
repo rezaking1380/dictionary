@@ -14,7 +14,7 @@ export default function Example({ examples }: any) {
     }
   };
   return (
-    <div className="border-2 border-l-8 mx-3 p-5 rounded-lg border-[#264653]">
+    <div className="border-2 border-l-8 mx-3 p-5 rounded-lg border-[#264653] mb-4">
       <div className="text-2xl font-semibold mb-2">
         Examples
       </div>
