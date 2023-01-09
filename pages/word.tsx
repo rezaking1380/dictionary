@@ -14,8 +14,8 @@ function Word() {
   const details = useSelector((state: initState) => state.Word);
   const status = useSelector((state: initState) => state.Status);
   const [word, setWord] = useState(details[0]);
-  if (details.length == 0) <Loading />;
-  if (word == undefined) <Loading />;
+  if (details.length == 0) return;
+  if (word == undefined) return;
   let wordAudio: string | undefined;
   let wordPhonetic;
   word?.phonetics.forEach((item) => {

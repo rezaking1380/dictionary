@@ -9,7 +9,7 @@ export default function PartOfSpeech(meanings: any) {
   const meaning: meanings = meanings.meanings;
   const status = useSelector((status:initState) => status.Status)
   return (
-    <div className="border-2 mt-6 p-5 rounded-lg border-l-8 border-[#50C9E7]">
+    <div className="border-2 mt-6 p-5 rounded-lg border-l-8 border-[#50C9E7] mb-2">
       <div>
         <div className="text-2xl font-semibold border-b-2 pb-3">
           {meaning.partOfSpeech}
