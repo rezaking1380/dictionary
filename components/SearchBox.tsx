@@ -25,12 +25,12 @@ export default function SearchBox() {
   };
   return (
     <div
-      className={` flex flex-col max-w-screen-md mx-auto justify-center sm:min-w-[600px]`}
+      className={`flex flex-col max-w-screen-md mx-auto justify-center sm:min-w-[600px] bg-white rounded-3xl`}
       id="searchbox"
     >
       <div
         className="relative flex items-center p-0 transition-all duration-300 border-[0.35rem]
-    border-[#E76F51] ring-4 ring-[#6248B1]/10 rounded-3xl mx-3  shadow-none"
+    border-[#E76F51] ring-4 ring-[#6248B1]/10 rounded-3xl shadow-none"
       >
         <img src="/assets/img/united-kingdom (1).png" alt="united-kingdom" className="w-12 sm:w-16 ml-2" />
         <input
@@ -44,7 +44,7 @@ export default function SearchBox() {
         {status === "loading" ? (
           <Loading />
         ) : (
-          <button onClick={sentWord} className='pr-2'>
+          <button onClick={sentWord} className='pr-2' >
             <FaSearch className=" text-3xl md:text-4xl text-gray-500 m-2" />
           </button>
         )}

@@ -1,12 +1,21 @@
 @import "./Home.module.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Quicksand bold;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+#main-word{
+  animation: animateBg 10s linear infinite;
+  background-image: linear-gradient(90deg,#bd4faf,#5794db,#bd4faf,#5794db,#05E39D);
+  background-size: 400% 100%;
+}
+@keyframes animateBg {
+  0% { background-position: 0% 0%; }
+  50% {background-position: 100% 0%;}
+  100% { background-position: 0% 0%; }
+}
 /* @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"); */

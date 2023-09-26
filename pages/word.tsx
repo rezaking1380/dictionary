@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Example from "../components/Example";
 import Loading from "../components/Loading";
@@ -14,8 +14,8 @@ function Word() {
   const details = useSelector((state: initState) => state.Word);
   const status = useSelector((state: initState) => state.Status);
   const [word, setWord] = useState(details[0]);
-  if (details.length == 0) return;
-  if (word == undefined) return;
+  // if (details.length == 0) return ;
+  // if (word == undefined) return ;
   let wordAudio: string | undefined;
   let wordPhonetic;
   word?.phonetics.forEach((item) => {
@@ -43,13 +43,13 @@ function Word() {
     setWord(details[0]);
   }, [details]);
   return (
-    <div>
-      <div className="mt-5">
+    <div id='main-word' className='min-h-[100vh]'>
+      <div className="pt-5">
         <SearchBox />
       </div>
       <div className="max-w-screen-lg mx-auto mt-6 flex flex-wrap items-start sm:flex-nowrap">
         <div className="sm:w-8/12 w-full mx-3">
-          <div className="border-[#E76F51] border-l-8 flex items-center rounded-md justify-between ring-2 ring-[#E76F51]">
+          <div className="border-[#E76F51] border-l-8 flex items-center rounded-md justify-between ring-2 ring-[#E76F51] bg-white">
             <div className="my-4 mx-5 flex flex-col">
               <div className="flex items-center">
                 <h1 className="mb-3 font-bold text-3xl items-start">
@@ -86,7 +86,7 @@ function Word() {
             )}
           </div>
         </div>
-        <div className="sm:w-4/12 w-full mt-5 sm:m-0">
+        <div className="sm:w-4/12 w-full mt-5 sm:m-0 sticky top-8">
           <Example examples={examples} />
         </div>
       </div>

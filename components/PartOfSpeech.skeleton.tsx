@@ -4,7 +4,7 @@ import Skeleton from "react-loading-skeleton";
 export default function PartOfSpeechSkeleton() {
   return (
     <>
-      <div className="border-2 mt-6 p-5 rounded-lg border-l-8 border-[#50C9E7]">
+      <div className="border-2 mt-6 p-5 rounded-lg border-l-8 border-[#50C9E7] bg-white">
         <div>
           <div className="text-2xl font-semibold border-b-2 pb-3">
             {<Skeleton height={30} width={100} />}
